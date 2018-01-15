@@ -1,12 +1,14 @@
 Simple bootstraping of python scripts
 =====================================
 
-This is an early prototype of a simple bootstrapping system for python scripts.
-By importing `scriptstrap` into a python script, a virtual environment ("venv")
+This is an early prototype of a simple bootstrapping system for python. By
+importing `scriptstrap` into a python script, a virtual environment ("venv")
 will be automatically created, dependencies installed (using `pip`) and the
 script will finally be re-launched inside the venv. This simplifies
 distribution of small utility scripts, as package dependencies are
 automatically manged by just running the script.
+
+The intended use case for `scriptstrap` is single-file utility scripts only!
 
 Features
 --------
@@ -14,17 +16,19 @@ Features
 - Automatic creation of virtual environment for each script
 - Dependencies are installed and imported automatically
 - Simplified script distribution
+- No additional dependencies other than python and virtualenv
 
 Requirements
 ------------
 
-Python 2.7 or later. Nothing else.
+* Python 2.7 or later
+* virtualenv
 
 Getting started
 ---------------
 
 You must do a global install of `scriptstrap` or run it from another
-venv. Recommended installation is:
+venv. Recommended installation is::
 
     $ pip install scriptstrap
 
