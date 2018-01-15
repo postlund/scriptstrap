@@ -134,6 +134,10 @@ def _shell(*cmd):
 
     try:
         subprocess.check_output(cmd, stderr=subprocess.STDOUT)
+    except FileNotFoundError:
+        _LOGGER.error(
+            'Could not find command %s, maybe you need to install it?', cmd[0])
+        sys.exit(1)
     except subprocess.CalledProcessError:
         _LOGGER.exception('Failed to run: %s', ' '.join(cmd))
         sys.exit(1)
